@@ -23,6 +23,5 @@ if($row =mysqli_fetch_row($empleado)) {
 			         break;
 }
 
-//prueba
 } else echo "usuario o clave incorrecto";
 ?>
