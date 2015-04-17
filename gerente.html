@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="estilo.css">
+<title>Sistema Financiero-Gerente</title>
+</head>
+<body>
+<div id="wrapper">
+<h1>Buscar un Cliente</h1>
+<form id="form" action="busqueda.php" method="POST" enctype="multipart/form-data">
+DNI: <input type="text" name="bdni" /><br /><br /> <input type="submit" value="Buscar" name="bdsubmit" /> <br />
+
+
+<h1>Registro de Clientes</h1>
+<form id="form" action="registro.php" method="POST" enctype="multipart/form-data">
+Nombre: <input type="text" name="nombre" /> <br />
+<!-- 
+Apellidos: <input type="text" name="apellidos" /> <br />
+Telefono: <input type="text" name="telefono" /> <br />
+Direccion: <input type="text" name="direccion" /> <br /> 
+-->
+Prestamo: <br />
+<input type="radio" name="prestamo" value="Personal"> Personal<br />
+
+
+<input type="submit" value="submit" name="submit" />
+
+
+<h1>Evaluacion de Cliente</h1>
+<form id="form" action="evaluacion.php" method="POST" enctype="multipart/form-data">
+<input type="radio" name="prestamo" value="Personal"> Asnef<br />
+<input type="radio" name="prestamo" value="Personal"> Estado Civil<br />
+<input type="radio" name="prestamo" value="hipotecario"> Otro Prestamo<br /><br />
+Ingreso Mensual: <input type="text" name="nombre" /> <br />
+Gasto Mensual: <input type="text" name="nombre" /> <br />
+Cantidad Solicitada: <input type="text" name="nombre" /> <br />
+Plazo: <input type="text" name="nombre" /> <br /><br />
+
+<input type="submit" value="submit" name="submit" />
+
+</form>
+</body>
+</html>
