@@ -1,0 +1,68 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+/*
+
+
+
+/*alto igual q body
+
+
+
+}
+
+/* puedo hacer mas grande/pequeño este div para poner mas cosas*, aca funcion Responsive?. hace mas largo la pagina */
+div#header{
+	margin:auto;
+	width: 100%;
+	height: 100px;
+	background-color: red;
+}
+
+
+div#body{
+	
+	margin: auto;
+	margin-top: 20px;
+	width: 900px;
+	height: 400px;
+	background-color: green;
+}
+
+	div#menus{
+	float: left;
+	width: 180px;
+	height: 400px;
+	background-color: purple;
+	}	
+
+	div#resultado{
+	float: right;
+	width: 700px;
+	height: 100%;
+	background-color: yellow;
+}
+
+div#footer{
+	
+	margin: auto;
+	margin-top: 20px;
+	width: 100%;
+	height: 50px;
+	background-color: blue;
+}
+
+.menuItem{
+	cursor:pointer;
+}
+
+ul {
+    display: block;
+    list-style-type: square;
+    margin-top: 1em;
+    margin-bottom: 1 em;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 40px;
+}

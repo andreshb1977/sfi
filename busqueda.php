@@ -3,8 +3,8 @@
 <h2>Datos del Cliente: </h2><br/>
 <form>
 <table border='1' cellpadding='1' cellspacing='1'>
- 		<tr><th colspan='8'>Listado de Clientes</th></tr>
- 		<tr><th>DNI</th><th>Nombre</th><th>Apellidos</th><th>Telefono</th><th>Direccion</th><th>AproG</th><th>AproA</th><th>CodAna</th></tr>
+ 		<tr><th colspan='9'>Listado de Clientes</th></tr>
+ 		<tr><th>DNI</th><th>Nombre</th><th>Apellidos</th><th>Telefono</th><th>Direccion</th><th>AproG</th><th>AproA</th><th>CodAna</th><th>CodPre</th></tr>
 
 
 
@@ -19,6 +19,18 @@
 	if(!$conb) {
 	die("ERROR AL TRATAR DE CONECTAR A LA BASE DE DATOS");
 	}
+
+//Iniciar Sesión
+session_start();
+
+//Validar si se está ingresando con sesión correctamente
+if (!$_SESSION['id_usuario']){
+echo '<script language = javascript>
+alert("usuario no autenticado")
+self.location = "index.html"
+</script>';
+}
+
 
 	$qr= "SELECT * FROM clientes where dni=" .$bdni ;
 	$res=mysqli_query($con,$qr);
