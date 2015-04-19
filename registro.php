@@ -1,11 +1,24 @@
-<?php
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>Sistema Financiero-Gerente</title>
+<link rel="stylesheet" type="text/css" href="css/estilo.css">
+<div id="header"></div>
+		<div id="body">
+<div id="resultado">
+<p><h4><a href="analista.html">Menu Principal</a></h4><br></p>
+	<?php
 	
-	$dni = $_REQUEST['dni'];
-	$nombre = $_REQUEST['nombre'];
-	$apellidos = $_REQUEST['apellidos'];
-	$telefono = $_REQUEST['telefono'];
-	$direccion = $_REQUEST['direccion'];
-	$codana = $_REQUEST['codana'];
+	$dni = $_POST['dni'];
+	$nombre = $_POST['nombre'];
+	$apellidos = $_POST['apellidos'];
+	$telefono = $_POST['telefono'];
+	$direccion = $_POST['direccion'];
+	$codana = $_POST['codana'];
 
 	$conexion = mysqli_connect("localhost", "root") or die("PROBLEMAS AL CONECTAR CON EL SERVIDOR");
 
@@ -26,6 +39,11 @@ else  {
 	echo "No puede registrarse porque ya esta en nuestra Base de Datos.";
 }
 
-?>	
+?>
 
-<h4><a href="analista.html">Menu Principal</a></h4>
+
+</div>
+</div>
+
+</body>
+</html>

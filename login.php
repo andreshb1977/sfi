@@ -1,6 +1,6 @@
 <?php
-	$nombre = $_REQUEST['usuario'];
-	$password = $_REQUEST['password'];
+	$nombre = $_POST['usuario'];
+	$password = $_POST['password'];
 	
 
 	$conexion = mysqli_connect("localhost", "sfi", "123") or die("PROBLEMAS AL CONECTAR CON EL SERVIDOR");

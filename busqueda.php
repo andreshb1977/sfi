@@ -6,7 +6,7 @@
 <title>Sistema Financiero</title>
 <link rel="stylesheet" type="text/css" href="css/estilo.css">
 <script type="text/javascript" src="js/libs/jquery.js"></script>
-<script type="text/javascript" src="js/funcionesmenu2.js"></script>
+<script type="text/javascript" src="js/funcionesmenu.js"></script>
 </head>
 <body>
 	
@@ -16,9 +16,9 @@
 				<h4><a href="analista.html">Menu Principal</a></h4><br>
 
 				<ul>
-					<li id="menu1" class="menuItem">Cliente </li>
-					<li id="menu2" class="menuItem">Simular </li>
-					<li id="menu3" class="menuItem">Generar Prestamo </li>					
+					<li id="menub1" class="menuItem">Cliente </li>
+					<li id="menub2" class="menuItem">Simular </li>
+					<li id="menub3" class="menuItem">Generar Prestamo </li>					
 				</ul>		
 
 			</div>
@@ -36,7 +36,7 @@
 
 
 				<?php
-					$bdni = $_REQUEST['bdni'];
+					$bdni = $_POST['bdni'];
 					$con = mysqli_connect("localhost", "root");
 					$conb = mysqli_select_db($con,"sfi");
 					if(!$con) {

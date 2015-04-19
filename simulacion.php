@@ -4,14 +4,14 @@
 <table border='1' cellpadding='1' cellspacing='1'>
  		<tr><th colspan='6'>Tabla de amortizacion calculada:</th></tr>
  		<tr><th>No Mes</th><th>Tipo Interes</th><th>Cuota</th><th>Amortizado</th><th>Intereses</th><th>Capital Pendiente</th></tr>
- 		<tr><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td><?php echo $_REQUEST['capital']; ?></td></tr>
+ 		<tr><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td><?php echo $_POST['capital']; ?></td></tr>
 
 
 <?php
 
-$p = $_REQUEST['capital'];
-$n = $_REQUEST['plazo'];
-$t = $_REQUEST['interes'];
+$p = $_POST['capital'];
+$n = $_POST['plazo'];
+$t = $_POST['interes'];
 $t1 =$t/(100*12);
 $c = round (($t1*$p)/(1-(pow(1/(1+$t1),$n))),2);
 
@@ -64,6 +64,7 @@ if ($i = $n) {
 </form>
 <!--Boton js para imprimir -->
 <h4><a href="analista.html">Menu Principal</a></h4>
+<h4><a href="busqueda.php">Generar Prestamo</a></h4>
 <input type="button" name="imprimir" value="Imprimir P&aacute;gina" onclick="window.print();">
 </br></br>
 </body>
