@@ -2,14 +2,28 @@
 	margin: 0px;
 	padding: 0px;
 }
-/*
 
+h1 {
+	font-size: 24px;
+	text-align: center;
+}
 
+#wrapper {
+	position: absolute;
+	width: 100%;
+	top: 30%;
+	margin-top: -50px;
+}
 
-/*alto igual q body
+#form {
+	margin: auto;
+	width: 200px;
+	height: 100px;
+}
 
-
-
+#form1 {
+	margin: auto;
+	
 }
 
 /* puedo hacer mas grande/pequeño este div para poner mas cosas*, aca funcion Responsive?. hace mas largo la pagina */

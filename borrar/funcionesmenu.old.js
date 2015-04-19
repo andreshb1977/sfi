@@ -16,3 +16,9 @@ $(function() {
 		$("#resultado").load("evaluar.html");
 	});
 });
+
+$(function() {
+	$("#menu4").click(function(){
+		$("#resultado").load("simular.html");
+	});
+});

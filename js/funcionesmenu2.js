@@ -7,18 +7,13 @@ $(function() {
 
 $(function() {
 	$("#menu2").click(function(){
-		$("#resultado").load("registrar.html");
+		$("#resultado").load("simular.html");
 	});
 });
 
 $(function() {
 	$("#menu3").click(function(){
-		$("#resultado").load("evaluar.html");
+		$("#resultado").load("generar.html");
 	});
 });
 
-$(function() {
-	$("#menu4").click(function(){
-		$("#resultado").load("simular.html");
-	});
-});
