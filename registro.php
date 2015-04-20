@@ -16,8 +16,8 @@
 	$dni = $_POST['dni'];
 	$nombre = $_POST['nombre'];
 	$apellidos = $_POST['apellidos'];
-	$telefono = $_POST['telefono'];
 	$direccion = $_POST['direccion'];
+	$telefono = $_POST['telefono'];
 	$codana = $_POST['codana'];
 
 	$conexion = mysqli_connect("localhost", "root") or die("PROBLEMAS AL CONECTAR CON EL SERVIDOR");
@@ -25,9 +25,8 @@
 	mysqli_select_db($conexion,"sfi") or die("ERROR AL TRATAR DE CONECTAR A LA BASE DE DATOS");
 
 
-	$qr1=mysqli_query($conexion, "INSERT INTO clientes VALUES 
-		('" .$dni. "', '"  .$nombre. "', '"  .$apellidos. "', '"  .$telefono. "',
-		 '"  .$direccion. "','','', '"  .$codana. "')");
+	$qr1=mysqli_query($conexion, "INSERT INTO clientes VALUES ('','" .$dni. "', '"  .$nombre. "', '"  .$apellidos. "','"  .$direccion. "',
+		 '"  .$telefono. "','','', '"  .$codana. "')");
 		
 	
 	

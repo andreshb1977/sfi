@@ -16,7 +16,7 @@
 				<h4><a href="analista.html">Menu Principal</a></h4><br>
 
 				<ul>
-					<li id="menub1" class="menuItem">Cliente </li>
+					<li id="menub1" class="menuItem">Buscar Cliente </li>
 					<li id="menub2" class="menuItem">Simular </li>
 					<li id="menub3" class="menuItem">Generar Prestamo </li>					
 				</ul>		
@@ -71,7 +71,6 @@
 				if($fila1=mysqli_fetch_row($res1)){
 				?>
 				<tr>
-					<td><?php echo $fila1[0]?></td>
 					<td><?php echo $fila1[1]?></td>
 					<td><?php echo $fila1[2]?></td>
 					<td><?php echo $fila1[3]?></td>
@@ -79,6 +78,7 @@
 					<td><?php echo $fila1[5]?></td>
 					<td><?php echo $fila1[6]?></td>
 					<td><?php echo $fila1[7]?></td>
+					<td><?php echo $fila1[8]?></td>
 					<td><?php echo $fila2[0]?></td>
 					<td><?php echo $fila2[1]?></td>
 				</tr>
