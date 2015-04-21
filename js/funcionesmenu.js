@@ -24,12 +24,12 @@ $(function() {
 });
 $(function() {
 	$("#menu5").click(function(){
-		$("#resultado").load("bsolicitudes.html");
+		$("#resultado").load("bsolicitudes.php");
 	});
 });
 $(function() {
-	$("#menu4").click(function(){
-		$("#resultado").load("baprobados.html");
+	$("#menu6").click(function(){
+		$("#resultado").load("baprobados.php");
 	});
 });
 

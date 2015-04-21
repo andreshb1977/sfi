@@ -75,7 +75,7 @@
 				if($fila1=mysqli_fetch_row($res1)){
 				?>
 				<tr>
-					<input name="dni" type="hidden" value='<?php echo $fila1[1]?>' />
+					<input type="hidden" name="dni" value='<?php echo $fila1[1]?>' />
 					<td><?php echo $fila1[1]?></td>
 					<td><?php echo $fila1[2]?></td>
 					<td><?php echo $fila1[3]?></td>
@@ -83,7 +83,7 @@
 					<td><?php echo $fila1[5]?></td>
 					<!--campo modificable-->
 					<td><?php echo $fila1[6]?></td>
-					<td><input name="aprana" type="text" class="fields" size="4" value='<?php echo $fila1[7]?>' /></td>
+					<td><input type="text" name="aprana" class="fields" size="4" value='<?php echo $fila1[7]?>' /></td>
 					<td><?php echo $fila1[8	]?></td>
 					<td><?php echo $fila2[0]?></td>
 					<td><?php echo $fila2[1]?></td>
@@ -96,7 +96,7 @@
 				mysqli_close($con); //cierro la conexion
 				?>
 				</table><br /><br />
-				<input name="submit" type="submit" value="Actualizar" />
+				<input type="submit" name="submit" value="Actualizar" />
 				</form>
 
 				

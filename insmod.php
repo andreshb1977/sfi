@@ -14,8 +14,6 @@
 
 				//Iniciar Sesión
 				session_start();
-				echo $_POST['aprana'];
-				echo $_POST['dni'];
 				if ($_POST['submit']){
 					$qr3= "UPDATE clientes  SET aprana=".$_POST['aprana']." where dni='".$_POST['dni']."'";
 					$res3=mysqli_query($con,$qr3);
