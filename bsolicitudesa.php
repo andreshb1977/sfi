@@ -13,7 +13,7 @@ die("ERROR AL TRATAR DE CONECTAR A LA BASE DE DATOS");
 //Iniciar Sesión
 session_start();
 
-$qr1="SELECT c.*, codpre, canpre FROM clientes c, prestamos p where aprana='1' and aprger='1' and c.dni=p.dni order by c.dni";	
+$qr1="SELECT c.*, codpre, canpre FROM clientes c, prestamos p where aprana='1' and aprger='0' and c.dni=p.dni order by c.dni";	
 
 $res1=mysqli_query($con,$qr1);
 ?>
@@ -28,7 +28,7 @@ $res1=mysqli_query($con,$qr1);
 </head>
 <body>
 		
-	<h1>Datos del Cliente: </h1><br/>
+	<h1>Clientes AProbados por Analista: </h1><br/>
 
 	<form >
 	<table border='1' cellpadding='1' cellspacing='1'>

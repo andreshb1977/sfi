@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>Sistema Financiero</title>
+<title>SFI Gerente</title>
 <link rel="stylesheet" type="text/css" href="css/estilo.css">
 <script type="text/javascript" src="js/libs/jquery.js"></script>
 <script type="text/javascript" src="js/funcionesmenu.js"></script>
@@ -28,7 +28,7 @@
 				<h1>Datos del Cliente: </h1><br/>
 
 
-				<form id="form1" action="insmod.php" method="POST">
+				<form id="form1">
 				<table border='1' cellpadding='1' cellspacing='1'>
 				 		<tr><th colspan='10'>Listado de Clientes</th></tr>
 				 		<tr><th>DNI</th><th>Nombre</th><th>Apellidos</th><th>Telefono</th><th>Direccion</th><th>AproG</th><th>AproA</th><th>CodAna</th><th>CodPre</th><th>CanPre</th></tr>
@@ -50,8 +50,8 @@
 
 				//Iniciar Sesión
 				session_start();
-				//Para hacer la consulta necesito pasar por sesion el dni busqueda.
-				$_SESSION['bdni']==$bdni;
+				//Para hacer la consulta necesito pasar por sesion el dni busqueda.(modifiq ==)
+				$_SESSION['bdni']=$bdni;
 
 				//Validar si se está ingresando con sesión correctamente
 				if (!$_SESSION['id_usuario']){
@@ -83,7 +83,10 @@
 					<td><?php echo $fila1[5]?></td>
 					<!--campo modificable-->
 					<td><?php echo $fila1[6]?></td>
-					<td><input type="text" name="aprana" class="fields" size="4" value='<?php echo $fila1[7]?>' /></td>
+					<td><?php echo $fila1[7]?></td>
+					<!-- ya no pq lo apruebo al generarlo
+					<td><input type="text" name="aprana" class="fields" size="4" value='<?php echo $fila1[7]?>' /></td> 
+					-->
 					<td><?php echo $fila1[8	]?></td>
 					<td><?php echo $fila2[0]?></td>
 					<td><?php echo $fila2[1]?></td>
@@ -96,7 +99,7 @@
 				mysqli_close($con); //cierro la conexion
 				?>
 				</table><br /><br />
-				<input type="submit" name="submit" value="Actualizar" />
+				<!--<input type="submit" name="submit" value="aprobara" />-->
 				</form>
 
 				

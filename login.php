@@ -14,7 +14,7 @@ if(!isset($_SESSION)) {
 }
 
 
-	$empleado = mysqli_query($conexion, "SELECT * FROM empleados where usuario = '".$nombre. "' and password = '" .$password. "'");
+	$empleado = mysqli_query($conexion, "SELECT cargo FROM empleados where usuario = '".$nombre. "' and password = '" .$password. "'");
 
 	$row =mysqli_fetch_row($empleado);
 	
@@ -29,7 +29,7 @@ if(!isset($_SESSION)) {
 		//Definimos las variables de sesión y redirigimos a la página de usuario
 		$_SESSION['id_usuario'] = $row[0];
 
-		switch ($row[3]) {
+		switch ($row[0]) {
 		   case 'cajero':
 				         header("Location: cajero.html");
 				         break;

@@ -11,8 +11,11 @@
 	}
 
 if ($_REQUEST['grabar']){
+echo $_REQUEST['dni'];	
+$qr5= "UPDATE clientes SET aprana=1 where dni=".$_REQUEST['dni'];
+$res5=mysqli_query($con,$qr5);
 //ingreso de datos a tabla prestamos
-	echo $_REQUEST['dni'];
+	//echo $_REQUEST['dni'];
 	//Prestamos menores a 300 euros
 	if($_REQUEST['canpre'] > 300){
 	$qr1= "INSERT INTO prestamos values('', '" .$_REQUEST['codpre']. "', '" .$_REQUEST['dni']. "', '" .$_REQUEST['canpre']. "')" ;

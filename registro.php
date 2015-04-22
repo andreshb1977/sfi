@@ -25,8 +25,7 @@
 	mysqli_select_db($conexion,"sfi") or die("ERROR AL TRATAR DE CONECTAR A LA BASE DE DATOS");
 
 
-	$qr1=mysqli_query($conexion, "INSERT INTO clientes VALUES ('','" .$dni. "', '"  .$nombre. "', '"  .$apellidos. "','"  .$direccion. "',
-		 '"  .$telefono. "','','', '"  .$codana. "')");
+	$qr1=mysqli_query($conexion, "INSERT INTO clientes VALUES ('','" .$dni. "','"  .$nombre. "','" .$apellidos. "','" .$telefono. "','" .$direccion. "','','','" .$codana. "')");
 		
 	
 	

@@ -24,15 +24,27 @@ $(function() {
 });
 $(function() {
 	$("#menu5").click(function(){
-		$("#resultado").load("bsolicitudes.php");
+		$("#resultado").load("bsolicitudesa.php");
 	});
 });
 $(function() {
 	$("#menu6").click(function(){
-		$("#resultado").load("baprobados.php");
+		$("#resultado").load("baprobadosa.php");
+	});
+});
+$(function() {
+	$("#menu7").click(function(){
+		$("#resultado").load("ticket.html");
 	});
 });
 
+//Para pagina de gerente
+$(function() {
+	$("#menu5g").click(function(){
+		$("#resultado").load("bsolicitudesg.php");
+	});
+});
+//
 
 $(function() {
 	$("#menub1").click(function(){

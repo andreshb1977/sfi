@@ -13,7 +13,7 @@ die("ERROR AL TRATAR DE CONECTAR A LA BASE DE DATOS");
 //Iniciar Sesión
 session_start();
 
-$qr1="SELECT c.*, codpre, canpre FROM clientes c, prestamos p where aprana='1' and aprger='0' and c.dni=p.dni order by c.dni";	
+$qr1="SELECT c.*, codpre, canpre FROM clientes c, prestamos p where aprana='1' and aprger='1' and c.dni=p.dni order by c.dni";	
 
 $res1=mysqli_query($con,$qr1);
 ?>
@@ -21,24 +21,25 @@ $res1=mysqli_query($con,$qr1);
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Sistema Financiero</title>
+<title>SFI Analista</title>
 <link rel="stylesheet" type="text/css" href="css/estilo.css">
 <script type="text/javascript" src="js/libs/jquery.js"></script>
 <script type="text/javascript" src="js/funcionesmenu.js"></script>
 </head>
 <body>
 		
-	<h1>Datos del Cliente: </h1><br/>
-
+	<h1>Clientes Aprobados por Gerencia: </h1><br/>
+	<input type="button" name="imprimir" value="Imprimir Página" onclick="window.print();"/></br></br>
 	<form >
 	<table border='1' cellpadding='1' cellspacing='1'>
-	<tr><th colspan='10'>Listado de Clientes</th></tr>
-	<tr><th>DNI</th><th>Nombre</th><th>Apellidos</th><th>Telefono</th><th>Direccion</th><th>AproG</th><th>AproA</th><th>CodAna</th><th>CodPre</th><th>CanPre</th></tr>
+	<tr><th colspan='11'>Listado de Clientes</th></tr>
+	<tr><th> </th><th>DNI</th><th>Nombre</th><th>Apellidos</th><th>Telefono</th><th>Direccion</th><th>AproG</th><th>AproA</th><th>CodAna</th><th>CodPre</th><th>CanPre</th></tr>
 	<!--Introducimos Datos-->
 	<?php
 	while($fila1=mysqli_fetch_array($res1)){
 	?>
 	<tr>
+		<td><input type="checkbox" name="idcliente[]" value="<?php echo $fila1[0]?>" /></td>
 		<td><?php echo $fila1[1]?></td>
 		<td><?php echo $fila1[2]?></td>
 		<td><?php echo $fila1[3]?></td>
