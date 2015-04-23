@@ -2,16 +2,34 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" href="estilo.css">
-<title>Cajero</title>
+<title>SFI cajero</title>
+<link rel="stylesheet" type="text/css" href="css/estilo.css">
+<script type="text/javascript" src="js/libs/jquery.js"></script>
+<script type="text/javascript" src="js/funcionesmenu.js"></script>
 </head>
 <body>
-<div id="wrapper">
-<h1>Acceso a caja del sistema</h1>
-<form id="form" action="login.php" method="POST" enctype="multipart/form-data">
-Username: <input type="text" name="usuario" /> <br />
-Password: <input type="password" name="password" /> <br /><br />
-<input type="submit" value="Login" name="submit" />
-</form>
+		<div id="header"></div>
+
+		<div id="body">
+
+			<div id="menus">
+				Opciones de Caja:<br>
+
+				<ul>
+					<li id="menu1c" class="menuItem">Buscar</li> <br />
+					<li id="menu2c" class="menuItem">Bandeja Aprobados</li><br />
+					<li id="menu3c" class="menuItem">Generar Documento</li><br />
+					<li id="menu4c" class="menuItem">Depositos</li>
+				</ul>		
+
+			</div>
+
+			<div id="resultado">
+				
+			</div>
+
+		</div>
+
+		<div id="footer"></div>
 </body>
 </html>

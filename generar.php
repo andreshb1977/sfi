@@ -11,7 +11,7 @@
 	}
 
 if ($_REQUEST['grabar']){
-echo $_REQUEST['dni'];	
+//echo $_REQUEST['dni'];	
 $qr5= "UPDATE clientes SET aprana=1 where dni=".$_REQUEST['dni'];
 $res5=mysqli_query($con,$qr5);
 //ingreso de datos a tabla prestamos

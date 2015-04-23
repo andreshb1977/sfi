@@ -44,8 +44,30 @@ $(function() {
 		$("#resultado").load("bsolicitudesg.php");
 	});
 });
-//
 
+///Para pagina de caja
+$(function() {
+	$("#menu1c").click(function(){
+		$("#resultado").load("buscar.html");
+	});
+});
+$(function() {
+	$("#menu2c").click(function(){
+		$("#resultado").load("baprobadosa.php");
+	});
+});
+$(function() {
+	$("#menu3c").click(function(){
+		$("#resultado").load("ticket.html");
+	});
+});
+$(function() {
+	$("#menu4c").click(function(){
+		$("#resultado").load("depositos.html");
+	});
+});
+
+// 
 $(function() {
 	$("#menub1").click(function(){
 		$("#resultado").load("buscar.html");
@@ -63,3 +85,5 @@ $(function() {
 		$("#resultado").load("generar.html");
 	});
 });
+
+
