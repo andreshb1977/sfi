@@ -45,10 +45,17 @@ $(function() {
 	});
 });
 
+$(function() {
+	$("#menu7g").click(function(){
+		$("#resultado").load("carteradg.php");
+	});
+});
+
+
 ///Para pagina de caja
 $(function() {
 	$("#menu1c").click(function(){
-		$("#resultado").load("buscar.html");
+		$("#resultado").load("buscarc.html");
 	});
 });
 $(function() {
@@ -58,7 +65,7 @@ $(function() {
 });
 $(function() {
 	$("#menu3c").click(function(){
-		$("#resultado").load("ticket.html");
+		$("#resultado").load("ticketc.html");
 	});
 });
 $(function() {

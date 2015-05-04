@@ -29,17 +29,15 @@ $res1=mysqli_query($con,$qr1);
 <body>
 		
 	<h1>Clientes Aprobados por Gerencia: </h1><br/>
-	<input type="button" name="imprimir" value="Imprimir Página" onclick="window.print();"/></br></br>
 	<form >
 	<table border='1' cellpadding='1' cellspacing='1'>
-	<tr><th colspan='11'>Listado de Clientes</th></tr>
-	<tr><th> </th><th>DNI</th><th>Nombre</th><th>Apellidos</th><th>Telefono</th><th>Direccion</th><th>AproG</th><th>AproA</th><th>CodAna</th><th>CodPre</th><th>CanPre</th></tr>
+	<tr><th colspan='10'>Listado de Clientes</th></tr>
+	<tr><th>DNI</th><th>Nombre</th><th>Apellidos</th><th>Telefono</th><th>Direccion</th><th>AproG</th><th>AproA</th><th>CodAna</th><th>CodPre</th><th>CanPre</th></tr>
 	<!--Introducimos Datos-->
 	<?php
 	while($fila1=mysqli_fetch_array($res1)){
 	?>
 	<tr>
-		<td><input type="checkbox" name="idcliente[]" value="<?php echo $fila1[0]?>" /></td>
 		<td><?php echo $fila1[1]?></td>
 		<td><?php echo $fila1[2]?></td>
 		<td><?php echo $fila1[3]?></td>

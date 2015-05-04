@@ -12,17 +12,19 @@
 
 if ($_REQUEST['grabar']){
 //echo $_REQUEST['dni'];	
+//Al generar el prestamo se pone APROBADO POR ANALISTA
 $qr5= "UPDATE clientes SET aprana=1 where dni=".$_REQUEST['dni'];
 $res5=mysqli_query($con,$qr5);
 //ingreso de datos a tabla prestamos
 	//echo $_REQUEST['dni'];
-	//Prestamos menores a 300 euros
+	//Prestamos Mayores o iguales a 300 euros deben pasar por gerente (else parger=1)
+
 	if($_REQUEST['canpre'] > 300){
-	$qr1= "INSERT INTO prestamos values('', '" .$_REQUEST['codpre']. "', '" .$_REQUEST['dni']. "', '" .$_REQUEST['canpre']. "')" ;
+	$qr1= "INSERT INTO prestamos values('', '" .$_REQUEST['codpre']. "', '" .$_REQUEST['dni']. "', " .$_REQUEST['canpre']. ",'" .$_REQUEST['fechapre']. "'," .$_REQUEST['plazo']. "," .$_REQUEST['plazo']. "," .$_REQUEST['cuota']. "," .$_REQUEST['interes']. ",'')" ;
 	$res1=mysqli_query($con,$qr1);
 	}
 	else{
-		$qr1= "INSERT INTO prestamos values('', '" .$_REQUEST['codpre']. "', '" .$_REQUEST['dni']. "', '" .$_REQUEST['canpre']. "')" ;
+		$qr1= "INSERT INTO prestamos values('', '" .$_REQUEST['codpre']. "', '" .$_REQUEST['dni']. "', " .$_REQUEST['canpre']. ",'" .$_REQUEST['fechapre']. "'," .$_REQUEST['plazo']. "," .$_REQUEST['plazo']. "," .$_REQUEST['cuota']. "," .$_REQUEST['interes']. ",'')" ;
 		$qr4= "UPDATE clientes SET aprger='1' where dni='" .$_REQUEST['dni']. "'";
 		$res1=mysqli_query($con,$qr1);
 		$res4=mysqli_query($con,$qr4);
