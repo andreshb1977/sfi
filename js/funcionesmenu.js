@@ -40,6 +40,11 @@ $(function() {
 
 //Para pagina de gerente
 $(function() {
+	$("#menu1g").click(function(){
+		$("#resultado").load("buscarg.html");
+	});
+});
+$(function() {
 	$("#menu5g").click(function(){
 		$("#resultado").load("bsolicitudesg.php");
 	});
@@ -51,6 +56,11 @@ $(function() {
 	});
 });
 
+$(function() {
+	$("#menu3g").click(function(){
+		$("#resultado").load("generarg.html");
+	});
+});
 
 ///Para pagina de caja
 $(function() {

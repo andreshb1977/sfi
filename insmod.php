@@ -2,7 +2,7 @@
 				<?php
 
 				
-					$con = mysqli_connect("localhost", "root");
+					$con = mysqli_connect("localhost", "sfi", "123");
 					$conb = mysqli_select_db($con,"sfi");
 					if(!$con) {
 					die("PROBLEMAS AL CONECTAR CON EL SERVIDOR");	
@@ -39,5 +39,5 @@
 								self.location = "gerente.html"
 							 </script>';
 				}
-				mysqli_close($con); //cierro la conexion
-				?>
+				//mysqli_close($con); //cierro la conexion
+			?>

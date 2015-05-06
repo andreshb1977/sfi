@@ -58,11 +58,11 @@ $codigoprestamo=$fila6[0]+1;
 		if($res1 and $res2){
 			echo '<script language = javascript>
 				alert("Prestamo Registrado Correctamente.")
-				self.location = "analista.html"
+				self.location = "gerente.html"
 				</script>';
 		}else echo '<script language = javascript>
 				alert("No se ingresaron correctamente.")
-				self.location = "analista.html"
+				self.location = "gerente.html"
 				</script>';
 
 	mysqli_free_result($res2); //liberar espacio de select

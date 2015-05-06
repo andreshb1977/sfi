@@ -14,7 +14,7 @@ if(!isset($_SESSION)) {
 }
 
 	//necesito idempleado para pasar por sesion q hay datos validos
-	$empleado = mysqli_query($conexion, "SELECT cargo,idempleado FROM empleados where usuario = '".$nombre. "' and password = '" .$password. "'");
+	$empleado = mysqli_query($conexion, "SELECT cargo,idempleado,usuario FROM empleados where usuario = '".$nombre. "' and password = '" .$password. "'");
 
 	$row =mysqli_fetch_row($empleado);
 	
@@ -28,6 +28,7 @@ if(!isset($_SESSION)) {
 	} else {
 		//Definimos las variables de sesión y redirigimos a la página de usuario
 		$_SESSION['id_usuario'] = $row[1];
+		$_SESSION['empleado'] = $row[2];
 
 		switch ($row[0]) {
 		   case 'cajero':

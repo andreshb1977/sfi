@@ -3,12 +3,16 @@
 <head>
 <meta charset="UTF-8">
 
-<title>Sistema Financiero-Gerente</title>
+<title>SFI</title>
 <link rel="stylesheet" type="text/css" href="css/estilo.css">
-<div id="header"></div>
-		<div id="body">
-<div id="resultado">
-<p><h4><a href="analista.html">Menu Principal</a></h4><br></p>
+<div id="header">
+	<img src="images/logosfi.jpg" id="Image2" alt="" style="width:190px;height:98x;">
+</div>
+<div id="body">
+<div id="menus"><br />
+<h2><a href="analista.html">Menu Principal</a></h2><br></div>
+<div id="resultado"><br />
+
 	<?php
 	if(isset($_POST['submit'])){
 	if ($_POST['nomina'] >= 400 and $_POST['asnef'] !='asnef' and $_POST['otrop'] !='otrop'){

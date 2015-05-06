@@ -3,7 +3,7 @@
 	padding: 0px;
 }
 body {
-		background-color: #ECF6CE;
+		background-color: white;
 		
 	}
 
@@ -12,54 +12,6 @@ h1 {
 	font-size: 24px;
 	text-align: center;
 }
-h2 { 
-    font-size: 18px;
-    text-align: center;
-    color: #AEB404;
-    font-weight: bold;
-}
-
-h3 { 
-    font-size: 22px;
-    color: #E50B0B;
-    font-weight: bold;
-}
-
-table {
-    
-    border-collapse: collapse;
-    text-align: center;
-    padding: 4px;
-    font-family: "Arial";
-    width: 100%;
-    font-size: 15px;
-
-}
-
-th{
-    
-    border-collapse: collapse;
-    text-align: center;
-    padding: 4px;
-    background-color: #AEB404;
-    
-    
-}
-
-tr {
-    
-    border-collapse: collapse;
-    text-align: center;
-    padding: 4px;
-    border: 1px solid green;
-}
-
-#simulatabla {
-	
-	border-collapse: collapse;
-	border: 1px solid black;
-}
-
 
 #wrapper {
 	position: absolute;
@@ -101,10 +53,9 @@ div#body{
 
 	div#menus{
 	float: left;
-	width: 200px;
+	width: 180px;
 	height: 400px;
-	background-color: #EFFBFB;
-	
+	background-color: #CEECF5;
 	}	
 
 	div#resultado{

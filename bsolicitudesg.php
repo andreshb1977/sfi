@@ -22,7 +22,7 @@ $res1=mysqli_query($con,$qr1);
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Sistema Financiero</title>
+<title>SFI</title>
 <link rel="stylesheet" type="text/css" href="css/estilo.css">
 <script type="text/javascript" src="js/libs/jquery.js"></script>
 <script type="text/javascript" src="js/funcionesmenu.js"></script>
@@ -32,7 +32,7 @@ $res1=mysqli_query($con,$qr1);
 	<h1>Clientes por Aprobar : </h1><br/>
 
 	<form action="insmod.php" method="POST">
-	<table border='1' cellpadding='1' cellspacing='1'>
+	<table>
 	<tr><th colspan='11'>Listado de Clientes</th></tr>
 	<tr><th> </th><th>DNI</th><th>Nombre</th><th>Apellidos</th><th>Telefono</th><th>Direccion</th><th>AproG</th><th>AproA</th><th>CodAna</th><th>CodPre</th><th>CanPre</th></tr>
 	<!--Introducimos Datos-->

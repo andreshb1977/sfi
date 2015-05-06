@@ -1,19 +1,23 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Sistema Financiero-Gerente</title>
+<title>SFI</title>
 <link rel="stylesheet" type="text/css" href="css/estilo.css">
 </head>
 <body>
-	<div id="header"></div>
-	<div id="body">
+	<div id="header">
+		<img src="images/logosfi.jpg" id="Image2" alt="" style="width:190px;height:98x;">
+	</div>
+<div id="body">
 
-	<div id="resultado">
-	<h4><a href="analista.html">Menu Principal</a></h4>
-		</br>
+<div id="menus"><br />	
+
+<h2><a href="gerente.html">Menu Principal</a></h2>
+</div>
+<div id="resultado">
 <input type="button" name="imprimir" value="Imprimir Página" onclick="window.print();"/></br></br>
 		<form >
-		<table border='1' cellpadding='1' cellspacing='1'>
+		<table >
 		 		<tr><th colspan='6'>Tabla de amortizacion calculada:</th></tr>
 		 		<tr><th>No Mes</th><th>Tipo Interes</th><th>Cuota</th><th>Amortizado</th><th>Intereses</th><th>Capital Pendiente</th></tr>
 		 		<tr><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td><?php echo $_POST['capital']; ?></td></tr>
@@ -79,7 +83,7 @@
 		
 </div>
 </div>
-<div id="footer"></div>
+<div id="footer1"></div>
 </body>
 
 </html>

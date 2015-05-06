@@ -15,11 +15,12 @@
 </div>
 	<div id="body">
 		<div id="menus"><br />
-			<h2><a href="analista.html">Menu Principal</a></h2><br />
+
+			<h2><a href="gerente.html">Menu Principal</a></h2><br />
 			<ul>
-				<li id="menub1" class="menuItem">Buscar Cliente </li>
+				<li id="menu1g" class="menuItem">Buscar Cliente </li>
 				<li id="menub2" class="menuItem">Simular </li>
-				<li id="menub3" class="menuItem">Generar Prestamo </li>					
+				<li id="menu3g" class="menuItem">Generar Prestamo </li>					
 			</ul>		
 		</div>
 

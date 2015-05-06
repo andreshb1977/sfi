@@ -15,7 +15,7 @@ die("ERROR AL TRATAR DE CONECTAR A LA BASE DE DATOS");
 //Seleccionamos q mostrar
 
 
-$qr1="SELECT c.codana,codpre,canpre,c.dni,concat (c.nombre ,' ' , c.apellidos) as nombre FROM clientes c,prestamos p,empleados e where c.dni=p.dni and e.usuario=c.codana and c.dni='".$_POST['dni']. "'";	
+$qr1="SELECT e.usuario,codpre,canpre,c.dni,concat (c.nombre ,' ' , c.apellidos) as nombre FROM clientes c,prestamos p,empleados e where c.dni=p.dni and e.usuario=c.codana and c.dni='".$_POST['dni']. "'";	
 $result=mysqli_query($con,$qr1);
 
 //Initialize the 5 columns and the total
@@ -28,13 +28,13 @@ $column_nombre = "";
 
 //Agregar el campo a cada columna de la fila
 while($row=mysqli_fetch_row($result) ){
-		$codana=$row[0];
+		//$codana=$row[0];
 		$cod= $row[1];
 		$can=$row[2];
 		$dni=$row[3];
 		$nombre= $row[4];
 
-	$column_codana = $column_codana.$codana."\n";
+	//$column_codana = $column_codana.$codana."\n";
 	$column_cod = $column_cod.$cod."\n";
     $column_can = $column_can.$can."\n";
     $column_dni = $column_dni.$dni."\n";
@@ -64,7 +64,7 @@ $pdf->MultiCell(80,6,'Fecha de Abono: ' .date("d-m-Y H:i:s"),0);
 
 $pdf->SetX($X_Table_Position);
 $pdf->SetY(26);
-$pdf->MultiCell(80,6,'Codigo de Cajero: '.$column_codana,0);
+$pdf->MultiCell(80,6,'Codigo de Cajero: '.$_POST['codcaj'],0);
 
 $pdf->SetX($X_Table_Position);
 $pdf->SetY(36);

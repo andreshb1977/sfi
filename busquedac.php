@@ -13,7 +13,9 @@
 
 	<div id="body">
 		<div id="menus"><br/>
-		<h4><a href="cajero.html">Menu Principal</a></h4><br>
+		<h2><a href="cajero.html">Menu Principal</a></h2><br>
+		<ul><li id="menu4c" class="menuItem">Depositos</li></ul>
+		
 		</div>
 		<div id="resultado">
 			<h1>Datos del Cliente: </h1><br/>
@@ -23,7 +25,7 @@
 		 		<tr><th>DNI</th><th>Nombre</th><th>Apellidos</th><th>AproG</th><th>AproA</th><th>CodAna</th><th>CodPre</th><th>CanPre</th><th>FechaPre</th><th>Plazo</th><th>Cuota</th><th>CuotasPen</th></tr>
 
 			<?php
-			$con = mysqli_connect("localhost", "root");
+			$con = mysqli_connect("localhost", "sfi", "123");
 			$conb = mysqli_select_db($con,"sfi");
 			if(!$con) {
 			die("PROBLEMAS AL CONECTAR CON EL SERVIDOR");	
@@ -76,13 +78,13 @@
 			}
 
 			mysqli_free_result($res1); //liberar espacio
-			mysqli_close($con); //cierro la conexion
+			//mysqli_close($con); //cierro la conexion
 			?>
 			</table><br /><br />
 			</form>
 	</div>
 
-	<div id="footer"></div>
+	<div id="footer1"></div>
 
 </body>
 </html>
