@@ -7,11 +7,12 @@
 
 <title>SFI</title>
 <link rel="stylesheet" type="text/css" href="css/estilo.css">
-<div id="header"></div>
+<div id="header">
+			<img src="images/logosfi.jpg" id="Image2" alt="" style="width:190px;height:98x;">
+</div>
 		<div id="body">
 <div id="menus"><br />
-<input type="button" onclick="history.back()" name="volver atrás" value="volver atrás">
-<!--<h2><a href="analista.html">Menu Principal</a></h2><br />-->
+<h2><a href="analista.html">Menu Principal</a></h2><br />
 </div>
 <div id="resultado"><br /><br />
 
@@ -41,7 +42,7 @@
 //echo $_SESSION['empleado']; no uso sesion porque caduca 2 minutos y no hay tiempo para investigar cambio
 	//$qr1=mysqli_query($conexion, "INSERT INTO clientes VALUES ('','" .$dni. "','"  .$nombre. "','" .$apellidos. "','" .$telefono. "','" .$direccion. "','','','" .$codana. "')");
 	$qr1=mysqli_query($conexion, "INSERT INTO clientes VALUES ('','" .$_POST['dni']. "','"  .$_POST['nombre']. "','" .$_POST['apellidos']. "','" .$_POST['telefono']. "','" .$_POST['direccion']. "','','','" .$_POST['codana']. "')");
-		if($qr1){echo "Cliente Registrado Correctamente";} else {echo "Cliente ya Existe en la Base de Datos";}
+		if($qr1){echo "<h5>Cliente Registrado Correctamente</h5>";} else {echo "Cliente ya Existe en la Base de Datos";}
 			
 }	
 

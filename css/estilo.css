@@ -12,24 +12,45 @@ h1 {
 	font-size: 24px;
 	text-align: center;
 }
+/*color verde para Opciones */
 h2 { 
     font-size: 18px;
     text-align: center;
     color: #AEB404;
     font-weight: bold;
 }
-
+/* color rojo */
 h3 { 
     font-size: 22px;
     color: #E50B0B;
     font-weight: bold;
 }
 
+h4 { 
+    font-size: 22px;
+    font-weight: bold;
+}
+
+h5 { 
+    font-size: 18px;
+    text-align: left;
+    color: #AEB404;
+    font-weight: bold;
+}
+
+h6 { 
+    font-size: 18px;
+    text-align: left;
+    color: #6E6E6E;
+    font-weight: bold;
+}
+
+
 table {
     
     border-collapse: collapse;
     text-align: center;
-    padding: 4px;
+    padding: 10px;
     font-family: "Arial";
     width: 100%;
     font-size: 15px;
@@ -39,28 +60,29 @@ table {
 th{
     
     border-collapse: collapse;
-    text-align: center;
+    text-align: left;
     padding: 4px;
     background-color: #AEB404;
     
     
 }
 
+
 tr {
     
     border-collapse: collapse;
-    text-align: center;
+    text-align: left;
     padding: 4px;
     border: 1px solid green;
 }
-
+/*
 #simulatabla {
 	
 	border-collapse: collapse;
 	border: 1px solid black;
 }
 
-
+*/
 #wrapper {
 	position: absolute;
 	width: 100%;
@@ -104,14 +126,15 @@ div#body{
 	width: 200px;
 	height: 400px;
 	background-color: #EFFBFB;
-	
+	padding: 10px;
 	}	
 
 	div#resultado{
 	float: right;
-	width: 700px;
+	width: 660px;
 	height: 120%;
 	background-color: #ECF6CE;
+	padding: 10px;
 }
 
 	div#resultado1{
@@ -120,6 +143,23 @@ div#body{
 	height: 100%;
 	background-color: #AEB404;
 }
+
+	div#resultado2{
+	float: left;
+	width: 560px;
+	height: 100%;
+	padding: 15px;
+	background-color: #ECF6CE
+	
+}
+div#informacion{
+	float: left;
+	width: 290px;
+	height: 100%;
+	background-color: #EFFBFB;
+	padding: 10px;
+	
+	}
 
 div#footer{
 	

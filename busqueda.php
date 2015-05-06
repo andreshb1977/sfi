@@ -26,7 +26,7 @@
 		<div id="resultado">
 			<h1>Datos del Cliente: </h1><br/>
 			<!--<form id="form1">-->
-			<table border='1' cellpadding='1' cellspacing='1'>
+			<table >
 		 		<tr><th colspan='10'>Listado de Clientes</th></tr>
 		 		<tr><th>DNI</th><th>Nombre</th><th>Apellidos</th><th>Telefono</th><th>Direccion</th><th>AproG</th><th>AproA</th><th>CodAna</th><th>CodPre</th><th>CanPre</th></tr>
 

@@ -32,7 +32,8 @@ if(!isset($_SESSION)) {
 
 		switch ($row[0]) {
 		   case 'cajero':
-				         header("Location: cajero.html");
+				         //header("Location: cajero.html");
+				         header("Location: cajero.php");
 				         break;
 		   case 'analista':
 				         header("Location: analista.html");

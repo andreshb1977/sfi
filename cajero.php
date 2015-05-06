@@ -1,3 +1,8 @@
+<?php
+session_start();
+//$empleado=$_SESSION['empleado'];
+
+?>
 <!DOCTYPE html>
 <html>
 <head>

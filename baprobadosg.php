@@ -31,7 +31,7 @@ $res1=mysqli_query($con,$qr1);
 	<h1>Clientes Aprobados por Gerencia: </h1><br/>
 
 	<form >
-	<table border='1' cellpadding='1' cellspacing='1'>
+	<table >
 	<tr><th colspan='6'>Listado de Clientes</th></tr>
 	<tr><th>DNI</th><th>AproG</th><th>AproA</th><th>CodAna</th><th>CodPre</th><th>CanPre</th></tr>
 	<!--Introducimos Datos-->

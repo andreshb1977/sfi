@@ -9,21 +9,20 @@
 </head>
 <body>
 	
-	<div id="header"></div>
+	<div id="header">
+			<img src="images/logosfi.jpg" id="Image2" alt="" style="width:190px;height:98x;">
+	</div>
 
 	<div id="body">
 		<div id="menus"><br/>
-		<h2><a href="cajero.html">Menu Principal</a></h2><br>
+		<h2><a href="cajero.php">Menu Principal</a></h2><br>
 		<ul><li id="menu4c" class="menuItem">Depositos</li></ul>
 		
 		</div>
 		<div id="resultado">
 			<h1>Datos del Cliente: </h1><br/>
-			<form>
-			<table border='1' cellpadding='1' cellspacing='1'>
-		 		<tr><th colspan='14'>Listado de Clientes</th></tr>
-		 		<tr><th>DNI</th><th>Nombre</th><th>Apellidos</th><th>AproG</th><th>AproA</th><th>CodAna</th><th>CodPre</th><th>CanPre</th><th>FechaPre</th><th>Plazo</th><th>Cuota</th><th>CuotasPen</th></tr>
-
+			
+			
 			<?php
 			$con = mysqli_connect("localhost", "sfi", "123");
 			$conb = mysqli_select_db($con,"sfi");
@@ -56,32 +55,58 @@
 			/////[7 canpre][8 fechapre][9 plazo][10 cuopen][11 cuota]	
 			//[7 canpre][8 fechapre][9 plazo][10 cuota]	[11 cuopen]
 			if($fila1=mysqli_fetch_row($res1)){
+			?>
+				<table text-align="left">
+					<tr> <th>
+			<?php
+			echo "<h6>_______________________</h6>";
+			echo "DNI     	           : ".$fila1[0];
+			echo "<h6>_______________________</h6>";
+			echo "Nombre               : ".$fila1[1] ;
+			echo "<h6>_______________________</h6>";
+			echo "Apellidos            : ".$fila1[2] ;
+			echo "<h6>_______________________</h6>";
+			echo "AprGer               : ".$fila1[3] ;
+			echo "<h6>_______________________</h6>";
+			echo "AprAna               : ".$fila1[4] ;
+			echo "<h6>_______________________</h6>";
+			echo "Codigo Analista      : ".$fila1[5] ;
+			
 			
 			?>
-			
-			<tr>
-				<td><?php echo $fila1[0]?></td>
-				<td><?php echo $fila1[1]?></td>
-				<td><?php echo $fila1[2]?></td>
-				<td><?php echo $fila1[3]?></td>
-				<td><?php echo $fila1[4]?></td>
-				<td><?php echo $fila1[5]?></td>
-				<td><?php echo $fila1[6]?></td>
-				<td><?php echo $fila1[7]?></td>
-				<td><?php echo $fila1[8]?></td>
-				<td><?php echo $fila1[9]?></td>
-				<td><?php echo $fila1[10]?></td>
-				<td><?php echo $fila1[11]?></td>
-			</tr>
-			
+					 </th>  
+
+					 <th>
 			<?php
-			}
+			echo "<h6>_______________________</h6>";
+			echo "Codigo Prestamo      : ".$fila1[6] ;
+			echo "<h6>_______________________</h6>";
+			echo "Cantidad de Prestamo : ".$fila1[7] ;
+			echo "<h6>_______________________</h6>";
+			echo "Fecha de Prestamo    : ".$fila1[8] ;
+			echo "<h6>_______________________</h6>";
+			echo "Plazo                : ".$fila1[9] ;
+			echo "<h6>_______________________</h6>";
+			echo "Cuota Mensual        : ".$fila1[10] ;
+			echo "<h6>_______________________</h6>";
+			echo "Cuota Pendiente      :    ".$fila1[11] ;	
+			?>		 	
+					  </th> 
+					 </tr>
+				</table>
+
+			<?php
+			
+			
+
+					
 
 			mysqli_free_result($res1); //liberar espacio
 			//mysqli_close($con); //cierro la conexion
+		}
 			?>
-			</table><br /><br />
-			</form>
+			<br /><br />
+			
 	</div>
 
 	<div id="footer1"></div>
