@@ -1,7 +1,4 @@
 <?php
-	$nombre = $_POST['usuario'];
-	$password = $_POST['password'];
-	
 
 	$conexion = mysqli_connect("localhost", "sfi", "123") or die("PROBLEMAS AL CONECTAR CON EL SERVIDOR");
 
@@ -10,25 +7,30 @@
 //Inicio de variables de sesion
 
 if(!isset($_SESSION)) {
-	session_start();
+	
 }
 
 	//necesito idempleado para pasar por sesion q hay datos validos
-	$empleado = mysqli_query($conexion, "SELECT cargo,idempleado,usuario FROM empleados where usuario = '".$nombre. "' and password = '" .$password. "'");
+	$empleado = mysqli_query($conexion, "SELECT cargo,idempleado,usuario FROM empleados where usuario = '".$_POST['usuario']. "' and password = '" .$_POST['password']. "'");
 
 	$row =mysqli_fetch_row($empleado);
 	
 	if(!$row[1]) {
 	
 	echo '<script language = javascript>
-	alert("Usuario o Password errados.")
+	alert("Usuario o Password Incorrectos.")
 	self.location = "index.html"
 	</script>';
 	
 	} else {
 		//Definimos las variables de sesión y redirigimos a la página de usuario
+		session_start();
+		session_set_cookie_params(0,"/");
+		$_SESSION["autentificado"]="SI";
+
 		$_SESSION['id_usuario'] = $row[1];
 		$_SESSION['empleado'] = $row[2];
+		$_SESSION['cargo'] = $row[0];
 
 		switch ($row[0]) {
 		   case 'cajero':
@@ -36,10 +38,10 @@ if(!isset($_SESSION)) {
 				         header("Location: cajero.php");
 				         break;
 		   case 'analista':
-				         header("Location: analista.html");
+				         header("Location: analista.php");
 				         break;
 		   case 'gerente':
-				         header("Location: gerente.html");
+				         header("Location: gerente.php");
 				         break;
 						}
 

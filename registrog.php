@@ -17,7 +17,7 @@
 <div id="resultado"><br /><br />
 
 	<?php
-	include ("seguridada.php");
+	include ("seguridadg.php");
 	//echo $_SESSION['empleado'];
 	/*$dni = $_POST['dni'];
 	$nombre = $_POST['nombre'];

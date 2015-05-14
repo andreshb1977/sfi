@@ -1,3 +1,4 @@
+<?php include ("seguridadg.php"); ?>
 <!DOCTYPE html>
 <html>
 <head>

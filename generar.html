@@ -4,8 +4,28 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="css/estilo.css">
 <title>SFI</title>
+<link rel="stylesheet" type="text/css" href="css/estilo.css">
+<link rel="stylesheet" type="text/css" href="jquery-ui-1.11.4.custom/jquery-ui.css">
+<script type="text/javascript" src="js/libs/jquery.js"></script>
+<script type="text/javascript" src="jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+<script type="text/javascript">
+$("document").ready( function(){
+
+
+	$( "#datepickerID" ) . datepicker ({
+
+		changeYear: true,		
+		dateFormat: "dd-mm-yy"
+	});
+	
+
+});
+datepicker()
+	
+</script>
 </head>
 <body>
+<script>$(function() { alert('funciona jquery') });</script>funciona jquery
 
 <!-- formulario para grabar prestamo-->
 <h1>Generar Prestamo: </h1><br/>
@@ -14,10 +34,12 @@
 <!--Codigo de Prestamo: <input type="text" name="codpre" /> <br /><br />-->
 DNI:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="dni" /> <br /><br />
 Cantidad de Prestamo: <input type="text" name="canpre" /> <br /> <br />
-Fecha de Prestamo: <input type="date" name="fechapre" /> <br /> <br />
+ZFecha de Prestamo: 
+<label for="datepickerID"></label>
+<input type="text" name="datepickerID" id="datepickerID" />
 Plazo:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="plazo" /> <br /> <br />
 Cuota Mensual: <input type="text" name="cuota" /> <br /> <br />
-Interes: <input type="text" name="interes" /> <br /> <br /><br />
+Interes:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="interes" /> <br /> <br /><br />
 <input type="submit" value="Grabar" name="grabar" />
 </form>
 </body>

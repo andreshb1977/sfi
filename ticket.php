@@ -1,5 +1,5 @@
 <?php
-
+include ("seguridada.php");
 require('./fpdf/fpdf.php');
 //conectar bs
 $con = mysqli_connect("localhost", "sfi", "123");

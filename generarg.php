@@ -1,5 +1,5 @@
 <?php
-
+include ("seguridadg.php");
 	$con = mysqli_connect("localhost", "sfi", "123");
 	$conb = mysqli_select_db($con,"sfi");
 	if(!$con) {
@@ -58,11 +58,11 @@ $codigoprestamo=$fila6[0]+1;
 		if($res1 and $res2){
 			echo '<script language = javascript>
 				alert("Prestamo Registrado Correctamente.")
-				self.location = "gerente.html"
+				self.location = "gerente.php"
 				</script>';
 		}else echo '<script language = javascript>
 				alert("No se ingresaron correctamente.")
-				self.location = "gerente.html"
+				self.location = "gerente.php"
 				</script>';
 
 	mysqli_free_result($res2); //liberar espacio de select

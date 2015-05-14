@@ -30,14 +30,14 @@ $res1=mysqli_query($con,$qr1);
 if($res1) {
 echo '<script language = javascript>
 		alert("Se actualizo los Datos.")
-		self.location = "analista.html"
+		self.location = "analista.php"
 	 </script>';
 }	
 
 else  {
 	echo '<script language = javascript>
 		alert("No se actualizo los Datos.")
-		self.location = "analista.html"
+		self.location = "analista.php"
 	 </script>';
 }
 

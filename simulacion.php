@@ -12,7 +12,7 @@
 
 <div id="menus"><br />	
 
-<!--<h2><a href="gerente.html">Menu Principal</a></h2>-->
+<!--<h2><a href="gerente.php">Menu Principal</a></h2>-->
 <input type="button" onclick="history.back()" name="Volver Atrás" value="volver atrás">
 </div>
 <div id="resultado">

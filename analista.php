@@ -1,3 +1,5 @@
+<!-- include arriba del todo-->
+<?php include ("seguridada.php");  ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,7 +29,8 @@
 					<li id="menu4" class="menuItem">Simular </li>	<br />						
 					<li id="menu5" class="menuItem">Bandeja Solicitudes </li> <br />
 					<li id="menu6" class="menuItem">Bandeja Aprobados </li>	<br />						
-					<li id="menu7" class="menuItem">Generar Documento </li>							
+					<li id="menu7" class="menuItem">Generar Ticket </li><br />	
+					<b><a href="salir.php" align="right">SALIR</a></b>						
 				</ul>		
 
 			</div>

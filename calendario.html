@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>SFI</title>
+<!-- Importante el orden de las librerias-->
+<link rel="stylesheet" type="text/css" href="./jquery-ui-1.11.4.custom/jquery-ui.css">
+
+<script type="text/javascript" src="js/libs/jquery.js"></script>
+<script type="text/javascript" src="./jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+
+<script type="text/javascript">
+$("document").ready( function(){
+
+
+	$( "#datepickerID" ) . datepicker ({
+
+		changeYear: true
+	});
+	
+
+});
+datepicker()
+	
+</script>
+
+
+</head>
+<body>
+	
+	<form id="form1" name="form1" method="post" action="">
+		<label for="datepickerID"></label>
+		<input type="text" name="datepickerID" id="datepickerID" />
+	</form>
+
+</body>
+</html>

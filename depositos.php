@@ -1,4 +1,4 @@
-
+<?php include ("seguridadc.php"); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,7 +6,12 @@
 <link rel="stylesheet" type="text/css" href="css/estilo.css">
 <title>SFI Caja</title>
 </head>
+<div id="header">
+			<img src="images/logosfi.jpg" id="Image2" alt="" style="width:190px;height:98x;">
+</div>
+<div id="body">
 
+<div id="informacion">
 <?php
 
 $con = mysqli_connect("localhost", "sfi", "123");
@@ -18,100 +23,114 @@ die("PROBLEMAS AL CONECTAR CON EL SERVIDOR");
 if(!$conb) {
 die("ERROR AL TRATAR DE CONECTAR A LA BASE DE DATOS");
 }
-
 //Iniciar Sesión
-session_start();
-//$cuota= "select cuota from"
+//session_start();
+#CODIGO DE PRESTAMO
+$_SESSION['codpre']=@$_POST['codpre'];
 
-//Numero de Prestamo
-echo "CÓDIGO DE PRESTAMO: ".$_POST['codpre']. "<br />";
-//echo "NUMERO DE COUTA PENDIENTE : ".$numerocuotaactual. "<br />";
-//sacar fecha de prestamo
-$fechapre = "select fechapre,cuota,plazo from prestamos where codpre='".$_POST['codpre']. "'";
+$fechapre = "select fechapre,cuota,plazo,cuotapen from prestamos where codpre='".@$_POST['codpre']. "'";
 $res1=mysqli_query($con,$fechapre);
-$res2=mysqli_fetch_row($res1);
-echo "Fecha Prestamo:".$res2[0]. "<br />";
-//Fecha de Prestamo
-$f1=strtotime($res2[0]);
-//echo $f1. "<br />";;
-// FECHA EXPRESADO EN SEGUNDOS, multiplico 1dia por 86400 para convertir dia a segundos
-//Fecha de ultimo pago
-$fechapagu="select fechapag,numcuo from pagos where codpre='".$_POST['codpre']. "' order by fechapag desc limit 1";
+$fila1=mysqli_fetch_row($res1);
+
+if($fila1){
+#FECHA DE PRESTAMO
+$_SESSION['fechapre']=$fila1[0];
+$f1=strtotime($fila1[0]);
+$fechapagu="select fechapag,numcuo from pagos where codpre='".@$_POST['codpre']. "' order by numcuo desc limit 1";
 $res3=mysqli_query($con,$fechapagu);
-$res4=mysqli_fetch_row($res3);
-echo "Fecha Ultimo Pago:".$res4[0]. "<br />";
+$fila3=mysqli_fetch_row($res3);
 
-//Fecha de Proximo Pago 
-$f10=strtotime($res4[0]);
-//echo $f1. "<br />";
+##Fecha Prestamo Foramateada a europa
+$fechapc=date("d-m-Y", $f1);
+//echo "fechaoc" .$fechapc;
 
+
+#FECHA ULTIMO PAGO
+$_SESSION['fechapagu']=$fila3[0];
+$f10=strtotime($fila3[0]);
 $f0=$f10+31*86400;
-//echo $f0. "<br />";
 $fechapp=date('Y-m-d',$f0);
-echo "Fecha De Proximo Pago: " .$fechapp."<br />"; 
-//
-echo "Numero de cuota:".$res4[1]. " de  " .$res2[2]. " cuotas <br />";
+##Formateada a Europa
+$fechaupc=date("d-m-Y", $f10);
 
 
-////dias de retraso
-$numerocuotaactual=$res4[1] + 1;
-//sacar fecha de hoy en numero
+#FECHA DE PROXIMO PAGO
+$_SESSION['fechapp']=$fechapp;
+##Formateada a Europa
+$fechappc=date("d-m-Y", $f0);
+
+#NUMERO DE CUOTAS PAGADAS deL PLAZO
+$_SESSION['numcuo']=$fila1[2];
+$_SESSION['numcuop']=$fila3[1];
+
+$numerocuotaactual=$fila3[1] + 1;
+
+//# FECHA ACTUAL 
 $hoy= date('Y-m-d');
-echo "Hoy es:".$hoy. "<br />";
 $f2=strtotime($hoy);
-//echo $f2. "<br />";
 $f4=$f1+ $numerocuotaactual*30*86400;
-//echo $f1. "<br /> numcuota";
-//echo $numerocuotaactual*30*86400;
-
-//echo $f4. "<br />";
 $f3=round(($f2-$f4)/86400);
-//$f3=round(($f2-$f1)/86400);
 
-echo "Dias de retraso para la cuota ".$numerocuotaactual." es : " .$f3. " dias<br />";
-//penalizacion es 36% al año = 0,1% diario
-$penalizacion=round($f3*0.001*$res2[1],2);
-echo "Penalizacion:".$penalizacion. "<br />";
-$canpag=$res2[1]+$penalizacion;	
-echo "Nueva Cuota:".$canpag. "<br />";
-///cuantas cuotas se deben????? y de acuerdo a eso aplicar lo de arriba 
+#DIAS DE RETRASO
+$_SESSION['ncuotaa']=$numerocuotaactual;
+$_SESSION['diasretraso']=$f3;
 
-//Cuotas Pendientes:
-$cuotaspendientes=$res2[2]-$res4[1];
-echo "Cuotas Pendientes:".$cuotaspendientes. "<br />";
+#PENALIZACION es 36% al año = 0,1% diario
+$penalizacion=round($f3*0.001*$fila1[1],2);
+$_SESSION['penalizacion']=$penalizacion;
+$canpag=$fila1[1]+$penalizacion;
 
+#NUEVA CUOTA	
+$_SESSION['canpag']=$canpag;
 
-//El cliente es informado de la deuda y acepta pagar la sgt cuota
-//if(!isset($_POST['submit'])
+#CUOTAS Pendientes:
+$_SESSION['cuotaspendientes']=$fila1[3];
 
-$qr1="INSERT INTO pagos values('',".$canpag.",'".$hoy."','".$_POST['codpre']."',".$penalizacion.",".$_POST['numcuo'].")";
-mysqli_query($con,$qr1);
-//no actualizo pq no necesito
-//$qr11="update prestamos set cuopen=".$cuotaspendientes. "WHERE codpre='".$_POST['codpre']. "'";
-//mysqli_query($con,$qr11);
-//Actualizar en Prestamo Cuota_Pendiente
-$ncp=$cuotaspendientes-1;
-$qr14="update prestamos set cuotapen=".$ncp. " where codpre='".$_POST['codpre']."' ";
-$res4=mysqli_query($con,$qr14);
-echo $res4[0];
-//Insertar en cartera
-$qr11 ="SELECT cartera FROM cartera order by idcartera DESC limit 1";
-$res2=mysqli_query($con,$qr11);
-$fila=mysqli_fetch_row($res2);
-//echo $fila[0];
-$ncartera = $fila[0] + $canpag ;
-$qr12= "INSERT INTO cartera values('', '" .$_POST['codpre']. "', '" .$ncartera. "')" ;
-$res3=mysqli_query($con,$qr12);
+# MENSAJES
+//echo $_SESSION['empleado'];
+
+echo "<h5>Código de Prestamo: ".@$_POST['codpre']. "</h5><br />";
+echo "<h5>Próxima Cuota a Pagar: ".$numerocuotaactual. "</h5><br />";
+echo "<h5>Nueva Cuota: ".$canpag. "</h5>";
+echo "<h5>______________________________</h5>";
+echo "Retraso para la cuota ".$numerocuotaactual." es : " .$f3. " días";
+echo "<h5>______________________________</h5>";
+
+echo "Fecha de Prestamo: ".$fechapc. "<br /><br/>";
+echo "<h5>---Luego del Primer Pago----</h5><br/>";
+//$fechaupc=cambiaf_a_normal($fila3[0]);
+//echo "Fecha de Último Pago: ".$fila3[0]. "";
+echo "Fecha de Último Pago: ".$fechaupc;
+echo "<h5>______________________________</h5>";
+
+//echo "Fecha De Próximo Pago: " .$fechapp.""; 
+echo "Fecha De Próximo Pago: " .$fechappc; 
+echo "<h5>______________________________</h5>";
+echo "Numero de Cuotas Pagadas: ".$fila3[1]. " de  " .$fila1[2]. " cuotas ";
+echo "<h5>______________________________</h5>";
+echo "Penalización: ".$penalizacion;
+echo "<h5>______________________________</h5>";
+echo "Cuotas Pendientes: ".$fila1[3];
+
+}
+else echo '<script language = javascript>
+				alert("Código de Prestamo No Existe.")
+				self.location = "cajero.php"
+				</script>';
 ?>
-
-
-<body>
+</div>
+<div id="resultado2">
+<h5><a href="cajero.php">Menu Principal</a></h5><br />
 <!-- formulario para grabar prestamo-->
-<h1>Pagar Cuota: </h1><br/>
-<form action="depositos.php" method="POST" enctype="multipart/form-data">
-Codigo de Prestamo: <input type="text" name="codpre" /> <br /><br />
-Numero de Cuota: <input type="text" name="numcuo" /> <br /><br />
+<h5>Pagar Cuota: </h5><br/>
+<form action="depositos1.php" method="POST" enctype="multipart/form-data">
+Codigo de Prestamo: <input type="text" size="5" name="codpre" value="<?php echo $_POST['codpre']?>" disabled /> <br /><br />
+Numero de Cuota:&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" size="5"  name="numcuo" value="<?php echo $numerocuotaactual ?>" disabled /> <br /><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <input type="submit" value="Pagar" name="submit" />
 </form>
+</div>
+</div>
 </body>
 </html>

@@ -10,7 +10,7 @@
 </div>
 <div id="body">
 <div id="menus"><br />
-<h2><a href="analista.html">Menu Principal</a></h2><br></div>
+<h2><a href="analista.php">Menu Principal</a></h2><br></div>
 <div id="resultado"><br />
 
 	<?php

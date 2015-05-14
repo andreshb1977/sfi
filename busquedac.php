@@ -16,6 +16,7 @@
 	<div id="body">
 		<div id="menus"><br/>
 		<h2><a href="cajero.php">Menu Principal</a></h2><br>
+		<h2>Opciones de Caja:</h2><br>
 		<ul><li id="menu4c" class="menuItem">Depositos</li></ul>
 		
 		</div>
@@ -46,64 +47,68 @@
 
 			//Tengo las BD relacionados con llaves foraneas, con lo q puedo hacer consultas de 2 tablas
 			//$qr1= "SELECT c.dni,nombre,apellidos,aprger,aprana,codana,p.codpre,canpre,fechapre,plazo,cuota,cuopen FROM clientes c,prestamos p  where c.dni=p.dni and c.dni='".$_POST['dni']. "'";
-			$qr1= "SELECT c.dni,nombre,apellidos,aprger,aprana,codana,p.codpre,canpre,fechapre,plazo,cuota,cuotapen FROM clientes c,prestamos p where c.dni=p.dni and c.dni='".$_POST['dni']. "'";
+			$qr1= "SELECT c.dni,nombre,apellidos,aprger,aprana,codana,p.codpre,canpre,fechapre,plazo,cuota,cuotapen FROM clientes c,prestamos p where c.dni=p.dni and c.dni='".@$_POST['dni']. "'";
 			//$qr11= "SELECT numcuo FROM pagos g, prestamos p where p.codpre=g.codpre and p.dni='".$_POST['dni']. "'";
 			$res1=mysqli_query($con,$qr1);
-			
+			$fila1=mysqli_fetch_row($res1);
+			$newDate = date("d-m-Y", strtotime($fila1[8]));
+			//echo $newDate;
+			//echo $fechapc;
 			//muestro los datos
 			//[0 dni][1 nom][2 apel][3 aprger][4 aprana][5 codana][6 codpre]
 			/////[7 canpre][8 fechapre][9 plazo][10 cuopen][11 cuota]	
 			//[7 canpre][8 fechapre][9 plazo][10 cuota]	[11 cuopen]
-			if($fila1=mysqli_fetch_row($res1)){
+			if($fila1){
+				
 			?>
-				<table text-align="left">
-					<tr> <th>
+				<table >
+					<tr > <th>
 			<?php
 			echo "<h6>_______________________</h6>";
-			echo "DNI     	           : ".$fila1[0];
+			echo "<h6>DNI     	           : ".$fila1[0]."</h6>";
 			echo "<h6>_______________________</h6>";
-			echo "Nombre               : ".$fila1[1] ;
+			echo "<h6>Nombre               : ".$fila1[1]."</h6>" ;
 			echo "<h6>_______________________</h6>";
-			echo "Apellidos            : ".$fila1[2] ;
+			echo "<h6>Apellidos            : ".$fila1[2]."</h6>" ;
 			echo "<h6>_______________________</h6>";
-			echo "AprGer               : ".$fila1[3] ;
+			echo "<h6>AprGer               : ".$fila1[3]."</h6>" ;
 			echo "<h6>_______________________</h6>";
-			echo "AprAna               : ".$fila1[4] ;
+			echo "<h6>AprAna               : ".$fila1[4]."</h6>" ;
 			echo "<h6>_______________________</h6>";
-			echo "Codigo Analista      : ".$fila1[5] ;
-			
+			echo "<h6>Codigo Analista      : ".$fila1[5]."</h6>" ;
 			
 			?>
 					 </th>  
 
 					 <th>
 			<?php
-			echo "<h6>_______________________</h6>";
-			echo "Codigo Prestamo      : ".$fila1[6] ;
-			echo "<h6>_______________________</h6>";
-			echo "Cantidad de Prestamo : ".$fila1[7] ;
-			echo "<h6>_______________________</h6>";
-			echo "Fecha de Prestamo    : ".$fila1[8] ;
-			echo "<h6>_______________________</h6>";
-			echo "Plazo                : ".$fila1[9] ;
-			echo "<h6>_______________________</h6>";
-			echo "Cuota Mensual        : ".$fila1[10] ;
-			echo "<h6>_______________________</h6>";
-			echo "Cuota Pendiente      :    ".$fila1[11] ;	
+			
+			echo "<h6>___________________________</h6>";
+			echo "<h6>Codigo Prestamo      : ".$fila1[6]."</h6>" ;
+			echo "<h6>___________________________</h6>";
+			echo "<h6>Cantidad de Prestamo : ".$fila1[7]."</h6>" ;
+			echo "<h6>___________________________</h6>";
+			echo "<h6>Fecha de Prestamo    : ".$newDate."</h6>" ;
+			echo "<h6>___________________________</h6>";
+			echo "<h6>Cuota Mensual        : ".$fila1[10]."</h6>" ;
+			echo "<h6>___________________________</h6>";
+			echo "<h6>Plazo                : ".$fila1[9]."</h6>" ;
+			echo "<h6>___________________________</h6>";
+			echo "<h6>Cuotas Pendientes      :    ".$fila1[11]."</h6>" ;	
 			?>		 	
 					  </th> 
 					 </tr>
 				</table>
 
 			<?php
-			
+			}
 			
 
 					
 
 			mysqli_free_result($res1); //liberar espacio
 			//mysqli_close($con); //cierro la conexion
-		}
+		
 			?>
 			<br /><br />
 			

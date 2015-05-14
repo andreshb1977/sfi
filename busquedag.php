@@ -16,7 +16,7 @@
 	<div id="body">
 		<div id="menus"><br />
 
-			<h2><a href="gerente.html">Menu Principal</a></h2><br />
+			<h2><a href="gerente.php">Menu Principal</a></h2><br />
 			<ul>
 				<li id="menu1g" class="menuItem">Buscar Cliente </li>
 				<li id="menub2" class="menuItem">Simular </li>
@@ -27,7 +27,7 @@
 		<div id="resultado">
 			<h1>Datos del Cliente: </h1><br/>
 			<!--<form id="form1">-->
-			<table >
+			<table border='1' cellpadding='1' cellspacing='1'>
 		 		<tr><th colspan='10'>Listado de Clientes</th></tr>
 		 		<tr><th>DNI</th><th>Nombre</th><th>Apellidos</th><th>Telefono</th><th>Direccion</th><th>AproG</th><th>AproA</th><th>CodAna</th><th>CodPre</th><th>CanPre</th></tr>
 
@@ -93,7 +93,7 @@
 
 			mysqli_free_result($res2); //liberar espacio
 			mysqli_free_result($res1);
-			//mysqli_close($con); //cierro la conexion
+			mysqli_close($con); //cierro la conexion
 			?>
 			</table><br /><br />
 			<!--<input type="submit" name="submit" value="aprobara" />-->

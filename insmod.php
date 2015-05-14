@@ -32,11 +32,11 @@
 					if(!$res4){
 						echo '<script language = javascript>
 								alert("No se Actualizo los Datos.")
-								self.location = "gerente.html"
+								self.location = "gerente.php"
 							 </script>';
 					}else echo '<script language = javascript>
 								alert("Datos Actualizados Correctamente.")
-								self.location = "gerente.html"
+								self.location = "gerente.php"
 							 </script>';
 				}
 				//mysqli_close($con); //cierro la conexion

@@ -1,5 +1,6 @@
 <?php
-session_start();
+//include arriba del todo
+include ("seguridadc.php");
 //$empleado=$_SESSION['empleado'];
 
 ?>
@@ -26,8 +27,10 @@ session_start();
 				<ul>
 					<li id="menu1c" class="menuItem">Buscar</li> <br />
 					<li id="menu2c" class="menuItem">Bandeja Aprobados</li><br />
-					<li id="menu3c" class="menuItem">Generar Documento</li><br />
-					<li id="menu4c" class="menuItem">Depositos</li>
+					<li id="menu4c" class="menuItem">Depositos</li><br />
+					<li id="menu3c" class="menuItem">Generar Ticket</li><br />
+					<b><a href="salir.php" align="right">SALIR</a></b>
+
 				</ul>		
 
 			</div>
